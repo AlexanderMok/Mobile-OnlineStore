@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	
+	<package name="back" namespace="/pages/back" extends="my_project_default">
+	
+	
+	
+	<!-- 关于商品活动的配置 -->
+	<!-- 分页显示全部活动 -->
+	  <action name="activity" class="cn.chia.back.action.ActivityAction"  method="findAllActivity">
+			<result name="findAllActivity">/pages/back/activity_list.jsp</result>
+	  </action>	
+	  
+	 <!-- 添加、修改新的活动 -->
+		<action name="operation" class="cn.chia.back.action.ActivityAction" >
+	  		<result name="preAddActivity">/pages/back/activity_add.jsp</result>
+	 		<result name="addActivity" type="redirectAction">activity</result>
+	 		<result name="preModify">/pages/back/activity_modify.jsp</result>
+	 		<result name="modifyActivity" type="redirectAction">activity</result>
+	  </action>
+	  <!-- 列出全部商品 -->
+	  	<action name="modifyActivity" class="activityAction" method="findAllItems">
+	  		<result name="findAllItems">/pages/back/items_list.jsp</result>
+	  	</action>
+	   
+	  	
+	  <!-- 添加、取消活动 -->
+	  	<action name="addActivity" class="cn.chia.back.action.ActivityAction" >
+	  		<result name="addActivityInItems" type="redirectAction">modifyActivity</result>
+	  		<result name="removeActivityInItems" type="redirectAction">modifyActivity</result>
+	  	</action>
+	
+	<action name="searchItemByGroup" class="itemAction" method="findByKeyWords">
+			<result name="findByKeyWords">/pages/back/findgoods.jsp</result>
+		</action>
+		
+	
+	
+	
+		<action name="user" class="userAction">
+			<result name="list">/pages/back/admin/user_list.jsp</result>
+			
+		</action>
+		<action name="admin" class="adminAction">
+			<result name="adminIndex">/pages/back/admin/admin_index.jsp</result>
+		</action>
+		
+		
+		<action name="order_list" class="orderAction" method="list">
+			<result>/pages/back/customer/order/order-listorders.jsp</result>
+		</action>
+		<action name="order_viewbyid" class="orderAction" method="viewbyid">
+			<result>/pages/back/customer/order/order-vieworderbyid.jsp</result>
+		</action>
+		<action name="order_viewbyid1" class="orderAction" method="viewbyid">
+			<result>/pages/back/customer/order/order-vieworderbyid1.jsp</result>
+		</action>
+		<action name="order_payforuser" class="orderAction" method="payviewbyid">
+			<result>/pages/back/customer/order/order-payforuser.jsp</result>
+		</action>
+		<action name="order_updatestate" class="orderAction" method="updatestate">
+			<result type="redirectAction">order_overdueorders</result>
+		</action>
+		<action name="order_listbystate" class="orderAction" method="listbystate">
+			<result>/pages/back/customer/order/order-listorders.jsp</result>
+		</action>
+		<action name="order_updateInmanage" class="orderAction" method="updateInmanage">
+			<result>/pages/back/customer/order/order-listorders.jsp</result>
+		</action>
+		
+		<action name="sender-list" class="senderAction" method="list">
+			<result>/pages/back/customer/sender/sender-listsender.jsp</result>
+		</action>
+		<action name="sender-add" class="senderAction" method="add">
+			<result type="redirectAction">sender-list</result>
+		</action>
+		<action name="sender-delete" class="senderAction" method="delete">
+			<result type="redirectAction">sender-list</result>
+		</action>
+		<action name="sender-update" class="senderAction" method="update">
+			<result type="redirectAction">sender-list</result>
+		</action>
+		<action name="sender-viewbyid" class="senderAction" method="viewbyid">
+			<result>/pages/back/customer/sender/sender-viewbyid.jsp</result>
+		</action>
+		
+		<!-- manager相关 -->
+		<action name="manager-chklogin" class="managerAction" method="login">
+			<result name="success">/pages/back/manager/index.jsp</result>
+			<result name="error">/pages/back/manager/login.jsp</result>
+		</action>
+		<action name="manager-logout" class="managerAction" method="logout">
+			<result>/pages/back/manager/login.jsp</result>
+		</action>
+		<action name="manager-findallsender" class="managerAction" method="findallsender">
+			<result>/pages/back/manager/sender/manager-listsender.jsp</result>
+		</action>
+		<action name="manager-deletesender" class="managerAction" method="deletesender">
+			<result type="redirectAction">manager-findallsender</result>
+		</action>
+		<action name="manager-addsender" class="managerAction" method="addsender">
+			<result type="redirectAction">manager-findallsender</result>
+		</action>
+		<action name="manager-viewsenderbyid" class="managerAction" method="viewsenderbyid">
+			<result>/pages/back/manager/sender/manager-viewsenderbyid.jsp</result>
+		</action>
+		<action name="manager-updatesender" class="managerAction" method="updatesender">
+			<result type="redirectAction">manager-findallsender</result>
+		</action>
+		<action name="manager-findallcustomerservice" class="managerAction" method="findallcustomerservice">
+			<result>/pages/back/manager/customerservice/manager-listcustomerservice.jsp</result>
+		</action>
+		<action name="manager-deletecustomerservice" class="managerAction" method="deletecustomerservice">
+			<result type="redirectAction">manager-findallcustomerservice</result>
+		</action>
+		<action name="manager-addcustomerservice" class="managerAction" method="addcustomerservice">
+			<result type="redirectAction">manager-findallcustomerservice</result>
+		</action>
+		<action name="manager-viewcustomerservicebyid" class="managerAction" method="viewcustomerservicebyid">
+			<result>/pages/back/manager/customerservice/manager-viewcustomerservicebyid.jsp</result>
+		</action>
+		<action name="manager-updatecustomerservice" class="managerAction" method="updatecustomerservice">
+			<result type="redirectAction">manager-findallcustomerservice</result>
+		</action>
+		<action name="manager-findalluser" class="managerAction" method="findalluser">
+			<result>/pages/back/manager/user/manager-listuser.jsp</result>
+		</action>
+		
+		<action name="customer-chklogin" class="CSAction" method="login">
+			<result name="success">/pages/back/customer/index.jsp</result>
+			<result name="error">/pages/back/customer/login.jsp</result>
+		</action>
+		<action name="customer-logout" class="CSAction" method="logout">
+			<result>/pages/back/customer/login.jsp</result>
+		</action>
+		
+		<!-- storekeeper相关 -->
+		<action name="storekeeper-listorderbystate" class="storekeeperAction" method="listbystate">
+			<result>/pages/back/storekeeper/order/order-listorders.jsp</result>
+		</action>
+		<action name="storekeeper-listorderbystate1" class="storekeeperAction" method="listbystate1">
+			<result>/pages/back/storekeeper/order/order-listorders.jsp</result>
+		</action>
+		<action name="storekeeper-chklogin" class="storekeeperAction" method="login">
+			<result name="success">/pages/back/storekeeper/index.jsp</result>
+			<result name="error">/pages/back/storekeeper/login.jsp</result>
+		</action>
+		<action name="storekeeper_updateInmanage" class="storekeeperAction" method="updateInmanage">
+			<result>/pages/back/storekeeper/order/order-listorders.jsp</result>
+		</action>
+		<action name="storekeeper_vieworderbyid" class="storekeeperAction" method="viewbyid">
+			<result>/pages/back/storekeeper/order/order-vieworderbyid.jsp</result>
+		</action>
+		<action name="storekeeper_vieworderbyid1" class="storekeeperAction" method="viewbyid">
+			<result>/pages/back/storekeeper/order/order-vieworderbyid1.jsp</result>
+		</action>
+		<action name="storekeeper-updateorderstate" class="storekeeperAction" method="updateorderstate">
+			<result type="redirectAction">storekeeper-listorderbystate</result>
+		</action>
+		<action name="sender-chklogin" class="senderAction" method="login">
+			<result name="success">/pages/back/peisongren/order/sender-main.jsp</result>
+			<result name="error">/pages/back/peisongren/login.jsp</result>
+		</action>
+		<action name="sender-vieworderbyid" class="senderAction" method="vieworderbyid">
+			<result>/pages/back/peisongren/order/sender-vieworderbyid.jsp</result>
+		</action>
+		<action name="sender-updatestate" class="senderAction" method="updatestate">
+			<result type="redirectAction">sender-listordersbystate?state=8</result>
+		</action>
+		<action name="sender-listordersbystate" class="senderAction" method="listordersbystate">
+			<result>/pages/back/peisongren/order/sender-main.jsp</result>
+		</action>
+		<action name="manager-logout" class="managerAction" method="logout">
+			<result>/pages/back/manager/login.jsp</result>
+		</action>
+		<action name="customer-logout" class="CSAction" method="logout">
+			<result>/pages/back/customer/login.jsp</result>
+		</action>
+		<action name="storekeeper-logout" class="storekeeperAction" method="logout">
+			<result>/pages/back/storekeeper/login.jsp</result>
+		</action>
+		<action name="order_overdueorders" class="orderAction" method="overdueorders">
+			<result>/pages/back/customer/order/order-listorders.jsp</result>
+		</action>
+		<action name="storekeeper-findordersbystateuszdtime" class="storekeeperAction" method="findordersbystateuszdtime">
+			<result>/pages/back/storekeeper/order/order-listorders.jsp</result>
+		</action>
+	</package> 
+
+</struts>    

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   repos="https://218.244.151.163:38443/svn/Chi-aWebSite"
+   name=""
+   revision="461"
+   last-author="lbl"
+   url="https://218.244.151.163:38443/svn/Chi-aWebSite/src/IShangLifeWebSite/src/com/alipay/util"
+   uuid="7bb4e8d4-0801-3544-82f9-7cdd4877a1ab"
+   committed-rev="385"
+   kind="dir"
+   committed-date="2015-11-15T12:36:58.526595Z"/>
+<entry
+   name="AlipayCore.java"
+   checksum="8bc9f0b145521cb18569d9a4c3765bc4"
+   last-author="lijia"
+   committed-rev="106"
+   text-time="2015-09-25T08:03:28.000000Z"
+   kind="file"
+   committed-date="2015-09-25T08:03:28.327999Z"/>
+<entry
+   name="AlipayNotify.java"
+   checksum="44e32eae107e383545e05c70ee236974"
+   last-author="lijia"
+   committed-rev="106"
+   text-time="2015-09-25T08:03:28.000000Z"
+   kind="file"
+   committed-date="2015-09-25T08:03:28.327999Z"/>
+<entry
+   name="AlipaySubmit.java"
+   checksum="7434e59807a908ac9699b539422613e8"
+   last-author="lijia"
+   committed-rev="182"
+   text-time="2015-10-13T08:22:58.000000Z"
+   kind="file"
+   committed-date="2015-10-13T08:22:58.634643Z"/>
+<entry
+   name="UtilDate.java"
+   checksum="e23c97cb7b8bf029c147646dc4598c6b"
+   last-author="lijia"
+   committed-rev="106"
+   text-time="2015-09-25T08:03:28.000000Z"
+   kind="file"
+   committed-date="2015-09-25T08:03:28.327999Z"/>
+<entry
+   name="httpClient"
+   kind="dir"/>
+<entry
+   name="package-info.java"
+   checksum="413c5b299b343660566fba93b02a10c3"
+   last-author="lijia"
+   committed-rev="106"
+   text-time="2015-09-25T08:03:28.000000Z"
+   kind="file"
+   committed-date="2015-09-25T08:03:28.327999Z"/>
+</wc-entries>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	<constant name="struts.objectFactory" value="spring"/>
+	
+	<package name="front" namespace="/pages/front" extends="my_project_default">
+	
+	
+	<!-- 关于商品的配置 -->
+	    <action name="item" class="itemAction" >
+			<result name="findByCatagorgy">/pages/front/item_detail.jsp</result>
+		    <result name="findByActivity">/pages/front/items_byactivity.jsp</result>
+		
+		</action>	
+		
+		<action name="catagorgy" class="itemAction" method="first">
+			<result name="first">/pages/front/first_catagorgy.jsp</result>
+		</action>
+		
+		<action name="second" class="itemAction" method="second">
+			<result name="second">/pages/front/second_catagorgy.jsp</result>
+		</action>
+		
+		<action name="search" class="itemAction" method="findByName">
+			<result name="findByName">/pages/front/search_result.jsp</result>
+		</action>
+		
+		<action name="finditems" class="itemAction">
+			<result name="findByFirstName">/pages/front/item_detail.jsp</result>
+		</action>
+		
+	
+	<!-- 关于拼团购配置 -->
+		<action name="grouppur" class="groupPurAction">
+			<result name="findByState">/pages/front/group_pur.jsp</result>
+			<result name="findGroupById">/pages/front/group_detail.jsp</result>
+			<result name="findAllGroup">/pages/back/group_list.jsp</result>
+			<result name="addGroup" type="redirectAction">grouppur!findAllGroup.action</result>
+			<result name="cancelGroup" type="redirectAction">grouppur!findAllGroup.action</result>
+			<result name="preModifyGroup">/pages/back/group_preModify.jsp</result>
+			<result name="modifyGroup" type="redirectAction">grouppur!findAllGroup.action</result>
+			
+		</action>
+		
+		
+	
+	
+	
+	<!-- 查询用户信息包括用户地址和用户图片 -->
+		<action name="user_*" class="userAction" method="{1}">
+			<result name="marketIndex" type="redirectAction">catagorgy</result>
+			<result name="login">/login.jsp</result>
+			<result name="myAddress">/pages/front/user/address_my.jsp</result>
+			<result name="updateUser">/pages/front/user/user_update.jsp</result>
+			<result name="addAddress" >/pages/front/user/address_add.jsp</result>
+			<result name="updateAddress" >/pages/front/user/address_update.jsp</result>
+			<result name="selectedAddress" type="redirectAction">queryShopcar</result>
+			<result name="selectPinAddress">/pages/front/market-pinbook.jsp</result>
+			<result name="updatePhoto">/pages/front/user/photo_update.jsp</result>
+			<result name="userInformation">/pages/front/user/user_index.jsp</result>
+			<result name="userIndex" type="redirect">user_findById</result>
+		</action>
+		
+		<action name="item_*" class="itemAction" method="{1}">
+			<result name="login">/login.jsp</result>
+		</action>
+		<action name="shopcar_*" class="shopcarAction" method="{1}">
+			<result name="success">/success.jsp</result>
+		</action>
+		
+		<action name="order_list" class="orderFrontAction" method="list">
+			<result>/pages/front/order/order-myorder.jsp</result>
+		</action>
+		<action name="order_delete" class="orderFrontAction" method="delete">
+			<result type="redirectAction">order_list</result>
+		</action>
+		<action name="order_viewbyid" class="orderFrontAction" method="viewbyid">
+			<result>/pages/front/order/order-orderinfo.jsp</result>
+		</action>
+		<action name="order_pay" class="orderFrontAction" method="payviewbyid">
+			<result>/pages/front/order/order_pay.jsp</result>
+		</action>
+		<action name="order_updatestate" class="orderFrontAction" method="update">
+			<result type="redirectAction">order_list</result>
+		</action>
+		<action name="order_viewbystate" class="orderFrontAction" method="viewbystate">
+			<result>/pages/front/order/order-myorder.jsp</result>
+		</action>
+	
+	<!--
+		增加购物车，然后跳转到购物车页面
+	-->
+		<action name="addShopcar" class="shopAction" method="addShopcar">
+		
+		</action>
+		<!-- 查询购物车 -->
+		<action name="queryShopcar" class="shopAction" method="queryShopcar">
+			<result>/pages/front/market-book.jsp</result>
+		</action>
+		<!-- 删除购物车 -->
+		<action name="delShopcar" class="shopAction" method="delShopcar">
+			<result type="redirect">queryShopcar</result>
+		</action>
+		
+		<!-- 生成订单 -->
+		<action name="toOrder" class="shopAction" method="toOrder">
+			<result name="order" type="redirectAction">listorderitems</result>
+		</action>
+		
+		<action name="pinOrder" class="shopAction" method="pinOrder">
+			<result type="redirectAction">listorderitems</result>
+		</action>
+		<action name="listorderitems" class="shopAction" method="listorderitems">
+			<result>/pages/front/order/order_preorder.jsp</result>
+		</action>
+		
+		
+		<!-- 支付 -->
+		<action name="pay_*" class="cn.chia.back.action.PayAction" method="{1}">
+			<!--<interceptor-ref name="token" />
+			<interceptor-ref name="defaultStack" />
+			
+			--><result name="ali">/WEB-INF/content/alipayapi.jsp</result>
+			<result name="wechat">/WEB-INF/content/wechatpayapi.jsp</result>
+			<result name="invalid.token">/WEB-INF/content/resubmit.jsp</result>
+			<result name="success">/WEB-INF/content/paysuccess.jsp</result>
+			<result name="error">/WEB-INF/content/payerror.jsp</result>
+			<result name="payerror">/WEB-INF/content/payerror.jsp</result>
+		</action>
+		
+		
+	</package> 
+
+</struts>    

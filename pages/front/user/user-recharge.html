@@ -1,0 +1,298 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link href="source/css/buju.css" type="text/css" rel="stylesheet"/>
+<link href="source/js/confirm/confirm.css" rel="stylesheet"/>
+<link href="source/js/confirm/stylenew.css" rel="stylesheet"/>
+<title>吃啊超市</title>
+<style type="text/css">
+  .header {
+	      position: relative;
+          height: 40px;
+          line-height: 40px;
+          background-color: #fff;
+          box-shadow:3px 3px 3px rgba(0,0,0,.3);
+          width: 100%;  
+}
+
+.header .logoleft {
+	height: 25px;
+	vertical-align: top;
+	margin-top: 8px;
+	margin-left: 20px;	
+	float: left;
+}
+.header .logoright {
+    position:absolute;
+    top:8px;
+    right:10px;
+	height: 25px;
+	vertical-align: top;
+	width: 25px;
+	
+}
+
+.logo {
+	display: inline
+}
+
+.header .hezi {
+	color: #f25f9d;
+}
+.title{
+
+    color:#f25f9d;
+
+    width:100%;
+
+    text-align:center;
+
+    vertical-align:middle;
+
+    white-space:nowrap;
+
+    text-overflow:ellipsis;
+
+    overflow:hidden;
+
+}
+.hezi {
+	font-size: 20px;
+	color: #f25f9d;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	text-align: center;
+	float: none;
+	height: 50px;
+	width: 150px;
+	margin-right: auto;
+	margin-left: auto;
+}
+.yue_big {
+	height: 60px;
+	width: 95%;
+	margin:0 auto;
+	line-height: 60px;
+	background-color: #fff;
+	text-indent: 1em;
+	margin-top: 5px;
+}
+.yue_big h3 span {
+	color: #F00;
+}
+.yue_big h3 {
+	font-size: 16px;
+}
+ hr {filter:alpha(opacity=50);
+-moz-opacity:0.5;
+-khtml-opacity: 0.5;
+opacity: 0.5;
+}
+#a1 {
+	height: 50px;
+	width: 100px;
+}
+#a2 {
+	height: 50px;
+	width: 100px;
+}
+#a3 {
+	height: 50px;
+	width: 100px;
+}
+.jine_fenlei ul li {
+	float: left;
+	width: 33%;
+	text-align: center;
+}
+input {height: 50px;font-size: 18px;color: #8E8C8C;width: 80%;outline: none;}
+	input::-webkit-input-placeholder {color: #ccc;}
+	.item {background-color: #fff; border: 1px solid #B1AFB0;position: relative;padding-left: 10px;margin: 0 10px;}
+	.btn {margin:50px 10px;}
+	.btn {background: #82BF25;height: 40px; text-align: center; line-height: 40px; font-size: 20px;margin-top: 30px;border-radius: 5px;}
+	.btn span {color: #fff;}
+	.yue_big2 {
+	margin:0 auto;
+	width: 95%;
+	background-color: #fff;
+	font-size: 16px;
+	height: 40px;
+	margin-top: 5px;
+	line-height: 40px;
+	text-indent: 1em;
+}
+
+
+
+.jine_fenlei {
+	height: 80px;
+	margin:0 auto;
+	width: 95%;
+	background-color: #fff;
+	
+	
+}
+.shurujine {
+	height: 70px;
+	width: 95%;
+	margin: 0 auto;
+	background-color: #fff;
+}
+.xiahuaxian {
+	margin-top: 50px;
+}
+
+.btn span {
+	font-size: 20px;
+}
+</style>
+</head>
+<body style="background-color: #EFEFEF">
+<div class="header">
+			 <a  href="javascript:history.go(-1)" class="logo"> <img
+				src="source/images/market_left.png"
+				class="logoleft"></a>
+			<div class="hezi">
+				<span class="title">我要充值</span>
+			</div>
+			<a  href="/IShangLifeWebSite/seller" class="logo"> <img
+				src="source/images/home-2.png" width="20" height="39"
+				class="logoright"></a>
+		</div>
+		
+		<div class="yue_big"><h3>您当前账户余额为：<span>￥10</span></h3>
+</div>
+
+<div class="yue_big2">请选择充值金额:</div>
+<div class="jine_fenlei">
+    <ul>
+    <li><img src="source/images/Mn50RMB.png"  width="137" height="50"  id="a1" onclick="changeSrc('a1')" data-type="1" /></li>
+    <li><img src="source/images/Mn100RMB.png" width="137" height="50" id="a2"  onclick="changeSrc('a2')" data-type="1"/></li>
+    <li><img src="source/images/Mn500RMB.png" width="137" height="50" id="a3"  onclick="changeSrc('a3')" data-type="1"/></li>
+    </ul>
+</div>
+
+<div class="shurujine">
+<form action="">
+		<div class="item email"><input type="text" placeholder="请输入其他金额" id="yue" onclick="changeSrc('yue')"/></div>
+</form></div>
+
+<div class="btn" onclick="javascript:changeSrc('sumbit')" tapmode="submit-hover"><span type="submit" ">确定充值</span></div>
+
+<script type="text/javascript" src="source/js/confirm/jquery-1.4.2.min.js"></script>
+<script src="source/js/confirm/jquery.confirm.js"></script>
+<script src="source/js/confirm/jquery.js"></script>
+<script type="text/javascript">
+var jine1=0;
+var jine2;
+function changeSrc(obj) {
+	var srcs="source/images/";
+	var yue=document.getElementById('yue');
+    var obj1=document.getElementById('a1');
+    var obj2=document.getElementById('a2');
+    var obj3=document.getElementById('a3');
+    if (obj=="a1") {
+	if(obj1.getAttribute("data-type")=="1"){
+	   obj1.src=srcs+"Mg50RMB.png";
+	   obj1.setAttribute("data-type","2");
+	   obj2.src=srcs+"Mn100RMB.png";
+	   obj2.setAttribute("data-type","1");
+	   obj3.src=srcs+"Mn500RMB.png";
+	   obj3.setAttribute("data-type","1");
+	   yue.value="";
+	   jine1=50;
+	}else{
+		obj1.src=srcs+"Mn50RMB.png";
+		obj1.setAttribute("data-type","1");
+		jine1=0;
+	}
+	} 
+	else if (obj=="a2"){
+       if(obj2.getAttribute("data-type")=="1"){
+	   obj2.src=srcs+"Mg100RMB.png";
+	   obj2.setAttribute("data-type","2");
+	   obj1.src=srcs+"Mn50RMB.png";
+	   obj1.setAttribute("data-type","1");
+	   obj3.src=srcs+"Mn500RMB.png";
+	   obj3.setAttribute("data-type","1");
+	   yue.value="";
+	   jine1=100;
+	}else{
+		obj2.src=srcs+"Mn100RMB.png";
+		obj2.setAttribute("data-type","1");
+		jine1=0;
+	} 
+	}
+	else if (obj=="a3"){
+       if(obj3.getAttribute("data-type")=="1"){
+	   obj3.src=srcs+"Mg500RMB.png";
+	   obj3.setAttribute("data-type","2");
+	   obj1.src=srcs+"Mn50RMB.png";
+	   obj1.setAttribute("data-type","1");
+	   obj2.src=srcs+"Mn100RMB.png";
+	   obj2.setAttribute("data-type","1");
+	   yue.value="";
+	   jine1=500;
+	}else{
+		obj3.src=srcs+"Mn500RMB.png";
+		obj3.setAttribute("data-type","1");
+		jine1=0;
+	} 
+	}else if(obj=='yue'){
+		obj1.src=srcs+"Mn50RMB.png";
+		obj1.setAttribute("data-type","1");
+		obj2.src=srcs+"Mn100RMB.png";
+		obj2.setAttribute("data-type","1");
+		obj3.src=srcs+"Mn500RMB.png";
+		obj3.setAttribute("data-type","1");
+		jine1=0;
+	}else if(obj=='sumbit'){
+		var jine=0;
+		jine2=yue.value;
+		if(jine2!=null && jine2!='' && jine2!=0){
+			jine=jine2;
+		}else if(jine1!=0 && jine1!=null && jine1!=''){
+			jine=jine1;
+		}else{
+			alert('请输入充值金额');
+			return;
+		}
+		 var reg= /^(\d+)(\.\d{1,2})?$/;	 
+		 //alert(changeMoney);
+		 if(!reg.test(jine)){	
+			 alert('亲，请输入有效金额哦！');
+			
+			return false;
+		 }
+		 var reclicked=false;
+		 $.confirm({
+				'message'	: "您确定充￥"+jine+"吗?",
+				'buttons'	: {
+					'确定'	: {
+						'action': function(){
+							 if (reclicked == false){
+							/* 	alert('SUCCESS'); */
+								window.location="/IShangLifeWebSite/user!arechangealipay?rechangetype=alipay&arechange="+jine;		
+								reclicked = true;
+							 }
+						}
+					},
+					'取消'	: {
+						'action': function(){}	// Nothing to do in this case. You can as well omit the action property.
+					}
+				}
+			});
+	}
+}
+function tiaozhuan(){
+	
+	window.location.href="/IShangLifeWebSite/user"; 
+	}
+</script>
+</body>
+</html>

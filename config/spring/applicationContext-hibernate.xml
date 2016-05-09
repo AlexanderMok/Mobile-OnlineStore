@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<context:annotation-config></context:annotation-config>
+	<context:component-scan
+		base-package="cn.chia.back.action,
+					  cn.chia.service.impl,
+					  cn.chia.back.dao.impl,
+					  cn.chia.front.dao.impl,
+					  cn.chia.front.action"></context:component-scan>
+
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName"
+			value="com.mysql.jdbc.Driver">
+		</property>
+		<property name="url" 
+			value="jdbc:mysql://localhost:3306/chia?useUnicode=true&amp;characterEncoding=UTF-8">
+		</property>
+		<property name="username" value="alex"></property>
+		<property name="password" value="sss"></property>
+	</bean>
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLDialect
+				</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">true</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>
+					hibernate/TblTouchItemsActivity.hbm.xml
+				</value>
+				<value>hibernate/TblUnit.hbm.xml</value>
+				
+				<value>hibernate/TblShopcar.hbm.xml</value>
+				<value>hibernate/TblExportBill.hbm.xml</value>
+				<value>hibernate/TblBill.hbm.xml</value>
+				<value>hibernate/TblImportBill.hbm.xml</value>
+				<value>hibernate/TblRole.hbm.xml</value>
+				<value>hibernate/TblStocks.hbm.xml</value>
+				<value>hibernate/TblUser.hbm.xml</value>
+				<value>hibernate/Peisongren.hbm.xml</value>
+				<value>hibernate/Ordertime.hbm.xml</value>
+				<value>hibernate/Orders.hbm.xml</value>
+				<value>hibernate/Orderitems.hbm.xml</value>
+				<value>hibernate/Address.hbm.xml</value>
+				<value>hibernate/TblActivity.hbm.xml</value>
+				<value>hibernate/TblItems.hbm.xml</value>
+				<value>hibernate/TblActivityType.hbm.xml</value>
+				<value>hibernate/TblCatagorgy.hbm.xml</value>
+				<value>hibernate/TblSuppliers.hbm.xml</value>
+				<value>hibernate/Customerservices.hbm.xml</value>
+				<value>hibernate/TblOrderTime.hbm.xml</value>
+				<value>hibernate/User.hbm.xml</value>
+				<value>hibernate/TblGroupPurchase.hbm.xml</value>
+				<value>hibernate/Iteminfoview.hbm.xml</value>
+				</list>
+			</property>
+	</bean>
+	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	
+</beans>

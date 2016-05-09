@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   repos="https://218.244.151.163:38443/svn/Chi-aWebSite"
+   name=""
+   revision="461"
+   last-author="lbl"
+   url="https://218.244.151.163:38443/svn/Chi-aWebSite/src/IShangLifeWebSite/src/com/alipay/config"
+   uuid="7bb4e8d4-0801-3544-82f9-7cdd4877a1ab"
+   committed-rev="385"
+   kind="dir"
+   committed-date="2015-11-15T12:36:58.526595Z"/>
+<entry
+   name="AlipayConfig.java"
+   checksum="4b1beac1e24169fe957f2159a54ef174"
+   last-author="lbl"
+   committed-rev="385"
+   text-time="2015-11-15T12:36:58.000000Z"
+   kind="file"
+   committed-date="2015-11-15T12:36:58.526595Z"/>
+<entry
+   name="package-info.java"
+   checksum="06451468207b7fb0e8d968231a45faa1"
+   last-author="lijia"
+   committed-rev="106"
+   text-time="2015-09-25T08:03:28.000000Z"
+   kind="file"
+   committed-date="2015-09-25T08:03:28.327999Z"/>
+</wc-entries>

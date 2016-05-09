@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   repos="https://218.244.151.163:38443/svn/Chi-aWebSite"
+   name=""
+   revision="461"
+   last-author="lijia"
+   url="https://218.244.151.163:38443/svn/Chi-aWebSite/src/IShangLifeWebSite/src/com/alipay/sign"
+   uuid="7bb4e8d4-0801-3544-82f9-7cdd4877a1ab"
+   committed-rev="106"
+   kind="dir"
+   committed-date="2015-09-25T08:03:28.327999Z"/>
+<entry
+   name="Base64.java"
+   checksum="afea3d2bd34d46012728ba0991ef4056"
+   last-author="lijia"
+   committed-rev="106"
+   text-time="2015-09-25T08:03:28.000000Z"
+   kind="file"
+   committed-date="2015-09-25T08:03:28.327999Z"/>
+<entry
+   name="MD5.java"
+   checksum="28653c1f3930bd461e26f034441c747d"
+   last-author="lijia"
+   committed-rev="106"
+   text-time="2015-09-25T08:03:28.000000Z"
+   kind="file"
+   committed-date="2015-09-25T08:03:28.327999Z"/>
+<entry
+   name="RSA.java"
+   checksum="cf2a3871ae32ad6ba56668780ce6b4a5"
+   last-author="lijia"
+   committed-rev="106"
+   text-time="2015-09-25T08:03:28.000000Z"
+   kind="file"
+   committed-date="2015-09-25T08:03:28.327999Z"/>
+<entry
+   name="package-info.java"
+   checksum="084ef1ba54bd5589d9fbb429c568f0e0"
+   last-author="lijia"
+   committed-rev="106"
+   text-time="2015-09-25T08:03:28.000000Z"
+   kind="file"
+   committed-date="2015-09-25T08:03:28.327999Z"/>
+</wc-entries>

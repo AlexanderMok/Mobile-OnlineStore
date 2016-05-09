@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="cn.chia.pojo.Iteminfoview" table="iteminfoview" catalog="chia">
+        <composite-id name="id" class="cn.chia.pojo.IteminfoviewId">
+            <key-property name="itemId" type="string">
+                <column name="item_id" length="10" />
+            </key-property>
+         </composite-id>
+            <property name="itemName" type="string">
+                <column name="item_name" length="100" />
+            </property>
+            <property name="cataName" type="string">
+                <column name="cata_name" length="200" />
+            </property>
+            <property name="itemPic" type="string">
+                <column name="item_pic" />
+            </property>
+            <property name="retailPrice" type="double">
+                <column name="retail_price" precision="22" scale="0" />
+            </property>
+            <property name="unitName" type="string">
+                <column name="unit_name" length="20" />
+            </property>
+            <property name="note" type="string">
+                <column name="note" />
+            </property>
+            <property name="activityName" type="string">
+                <column name="activity_name" />
+            </property>
+            <property name="startTime" type="string">
+                <column name="start_time" length="20" />
+            </property>
+            <property name="endTime" type="string">
+                <column name="end_time" length="20" />
+            </property>
+            <property name="discount" type="float">
+                <column name="discount" precision="10" />
+            </property>
+            <property name="fullCount" type="float">
+                <column name="full_count" precision="10" />
+            </property>
+            <property name="substractCount" type="float">
+                <column name="substract_count" precision="10" />
+            </property>
+            <property name="typeName" type="string">
+                <column name="type_name" length="100" />
+            </property>
+       
+         <property name="stocks" type="long">
+                <column name="stocks" />
+            </property>
+    </class>
+</hibernate-mapping>
